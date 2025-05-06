@@ -1,0 +1,171 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+.container {
+  max-width: 8.5in;
+  margin: 0 auto;
+  background: white;
+  padding: 1in;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 10pt;
+}
+
+.contact-info i {
+  margin-right: 5px;
+}
+
+/* Section styles */
+section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 14pt;
+  text-transform: uppercase;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
+  padding-bottom: 3px;
+}
+
+h3 {
+  font-size: 12pt;
+  margin-bottom: 5px;
+}
+
+/* Entry styles */
+.entry {
+  margin-bottom: 15px;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.entry-title {
+  font-weight: bold;
+}
+
+.entry-subheader {
+  display: flex;
+  justify-content: space-between;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+/* List styles */
+ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 5px;
+  list-style-type: disc;
+}
+
+/* Skills section */
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.skill-row {
+  display: flex;
+}
+
+.skill-label {
+  font-weight: bold;
+  width: 180px;
+}
+
+/* Multi-column list styling */
+.multi-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem 2rem;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.multi-column li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.multi-column li::before {
+  content: "•";
+  position: absolute;
+  left: -1rem;
+  color: #555;
+}
+
+/* Media queries for responsiveness */
+@media print {
+  body {
+    padding: 0;
+    background: white;
+  }
+  
+  .container {
+    box-shadow: none;
+    padding: 0.5in;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5in;
+  }
+  
+  .entry-header, .entry-subheader {
+    flex-direction: column;
+  }
+  
+  .multi-column {
+    column-count: 2;
+  }
+  
+  .skill-row {
+    flex-direction: column;
+  }
+  
+  .skill-label {
+    width: auto;
+  }
+}
