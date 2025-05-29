@@ -3,59 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rohan Sharma - Resume</title>
+  <title>Saroj Chaudhary - Resume</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Saroj Chaudhary</h1>
+      <h1 class="name">SAROJ CHAUDHARY</h1>
       <div class="contact-info">
-        <span><i class="fas fa-phone"></i> +91-9731382150 | +977-9845603175</span>
+        <span><a href="tel:+919731382150"><i class="fas fa-phone"></i> +91-9731382150 | +977-9845603175</a></span>
         <span><a href="mailto:chaudharysaroj844@gmail.com"><i class="fas fa-envelope"></i> chaudharysaroj844@gmail.com</a></span>
-        <span><a href="https://www.linkedin.com/in/saroj-chaudhary-33a657296/" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/saroj-chaudhary-33a657296</a></span>
+        <span><a href="https://linkedin.com/in/saroj-chaudhary-33a657296" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/saroj-chaudhary-33a657296</a></span>
         <span><a href="https://github.com/saroj580" target="_blank"><i class="fab fa-github"></i> github.com/saroj580</a></span>
-        <span><i class="fas fa-map-marker-alt"></i> Nepalgunj, Nepal</span>
+        <span><i class="fas fa-map-marker-alt"></i> Bangalore, India</span>
       </div>
+      <button id="downloadBtn" class="download-btn" onclick="window.location.href='/download-pdf'">
+        <i class="fas fa-download"></i> Download PDF
+      </button>
     </header>
 
     <section>
-      <h2>Education</h2>
+      <h2>EDUCATION</h2>
       <div class="entry">
         <div class="entry-header">
           <div class="entry-title">Jain (Deemed to be University)</div>
           <div class="entry-date">2023 – 2027 (Pursuing)</div>
         </div>
-        <div class="entry-subheader">
-          <div class="entry-subtitle">Bachelor of Technology in Computer Science</div>
-          <div class="entry-location">Bengaluru, India</div>
+        <div class="entry-details">
+          <div><em>Bachelor of Technology in Computer Science</em></div>
+          <div>Bengaluru, India</div>
+          <div>SGPA: 9.0/10</div>
         </div>
-        <div>CGPA: 9.0/10</div>
-      </div>
-      
-      <div class="subsection">
-        <h3>Relevant Coursework</h3>
-        <ul class="multi-column">
-            <li>Data Structures & Algorithms</li>
-            <li>Web Development</li>
-            <li>UI/UX Design</li>
-            <li>Database Systems</li>
-            <li>Operating Systems</li>
-            <li>Computer Networks</li>
-            <li>Software Engineering</li>
-        </ul>
       </div>
     </section>
 
-    
+    <div class="subsection">
+      <h3>Relevant Coursework</h3>
+      <ul class="multi-column">
+          <li>Data Structures & Algorithms</li>
+          <li>Web Development</li>
+          <li>UI/UX Design</li>
+          <li>Database Systems</li>
+          <li>Operating Systems</li>
+          <li>Computer Networks</li>
+          <li>Software Engineering</li>
+      </ul>
+    </div>
+    </section>
 
     <section>
       <h2>Technical Skills</h2>
       <div class="skills">
         <div class="skill-row">
           <span class="skill-label">Languages:</span>
-          <span class="skill-items">JavaScript (ES6+), TypeScript, HTML5/CSS3</span>
+          <span class="skill-items">JavaScript (ES6+), TypeScript, HTML5/CSS3, Java, C</span>
         </div>
         <div class="skill-row">
           <span class="skill-label">Frameworks/Libraries:</span>
@@ -72,22 +74,20 @@
       </div>
     </section>
 
-    <section>
-      <h2>Projects</h2>
+    <section class="projects">
+      <h2>PROJECTS</h2>
       <div class="entry">
         <div class="entry-header">
           <div class="entry-title">AI Voice Agent</div>
           <div class="entry-date">May 2025</div>
         </div>
         <div class="entry-subheader">
-          <div class="entry-subtitle">React, TypeScript, Next.js, Firebase, VAPI</div>
+          <div class="entry-subtitle">React, TypeScript, Next.js, Firebase, VAPI, Tailwind CSS</div>
         </div>
             <ul>
               <li>Developed an intelligent voice assistant application for Interview Preparation using React with TypeScript and Next.js</li>
               <li>Implemented secure user authentication and data storage using Firebase Authentication and Storage</li>
-              <li>Integrated VAPI for advanced voice recognition and natural language processing capabilities</li>
-              <li>Deployed the application on Vercel with CI/CD pipeline for automated testing and deployment</li>
-              <li>Created a responsive UI that adapts to various devices with accessibility features</li>
+              <li>Integrated VAPI for advanced voice recognition and Deployed on vercel.</li>
             </ul>
         </div>
 
@@ -97,13 +97,11 @@
           <div class="entry-date">March 2025</div>
         </div>
         <div class="entry-subheader">
-            <div class="entry-subtitle">React.js, Context API, Recharts, Firebase</div>
+            <div class="entry-subtitle">React.js, Context API, Recharts, Firebase, Tailwind CSS</div>
         </div>
         <ul>
             <li>Developed full-stack expense tracking application with user authentication</li>
             <li>Implemented data visualization using Recharts for expense analysis</li>
-            <li>Built responsive UI with dark/light theme support and accessibility features</li>
-            <li>Integrated Firebase for backend services including authentication and database</li>
         </ul>
     </div>
     
@@ -118,7 +116,6 @@
         <ul>
             <li>Implemented responsive product listing with filtering and sorting functionality</li>
             <li>Built shopping cart with cloud storage and checkout flow</li>
-            <li>Utilized Git for version control</li>
         </ul>
     </div>
 
@@ -133,8 +130,6 @@
       <ul>
         <li>Developed a responsive Todo application with features to add, delete, and mark tasks as complete</li>
         <li>Implemented state management using React Context API for efficient data flow across components</li>
-        <li>Created a clean, intuitive UI with Tailwind CSS for responsive design across all devices</li>
-        <li>Built with performance optimization techniques including memoization and proper component structure</li>
       </ul>
     </div>
 
@@ -150,25 +145,9 @@
         <li>Designed and developed a responsive personal portfolio website showcasing projects and skills</li>
         <li>Implemented smooth scrolling, animations, and interactive elements using vanilla JavaScript</li>
         <li>Created custom CSS animations and transitions for enhanced user experience</li>
-        <li>Optimized for performance with efficient code structure and responsive image loading</li>
       </ul>
     </div>
     
-      <div class="entry">
-        <div class="entry-header">
-          <div class="entry-title">Rock Paper Scissors Game</div>
-          <div class="entry-date">March 2024</div>
-        </div>
-        <div class="entry-subheader">
-          <div class="entry-subtitle">HTML5, CSS3, JavaScript</div>
-        </div>
-        <ul>
-          <li>Created an interactive Rock Paper Scissors game with a clean, user-friendly interface</li>
-          <li>Implemented game logic using vanilla JavaScript with DOM manipulation</li>
-          <li>Designed responsive UI with CSS animations to enhance user experience</li>
-        </ul>
-      </div>
-
     </section>
 
     <section>
@@ -181,5 +160,12 @@
       </ul>
     </section>
   </div>
+
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+      // Provide instructions for using an online HTML to PDF converter
+      alert("To download as PDF:\n\n1. Press Ctrl+A to select all content\n2. Press Ctrl+C to copy\n3. Go to https://www.sejda.com/html-to-pdf\n4. Paste your resume and click 'Convert to PDF'\n5. Download the generated PDF");
+    });
+  </script>
 </body>
 </html>

@@ -64,7 +64,7 @@ h3 {
   margin-bottom: 5px;
 }
 
-/* Entry styles */
+/* Entry styles with stronger right alignment for dates */
 .entry {
   margin-bottom: 15px;
 }
@@ -72,11 +72,59 @@ h3 {
 .entry-header {
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
+  width: 100%;
 }
 
 .entry-title {
   font-weight: bold;
+  flex: 1;
+}
+
+.entry-date {
+  font-weight: normal;
+  text-align: right;
+  margin-left: auto;
+  min-width: 100px; /* Ensure minimum width for dates */
+}
+
+/* Print-specific styles with !important to force right alignment */
+@media print {
+  .entry-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    flex-direction: row !important;
+  }
+  
+  .entry-title {
+    font-weight: bold !important;
+    flex: 1 !important;
+    text-align: left !important;
+    max-width: 70% !important; /* Limit title width */
+  }
+  
+  .entry-date {
+    font-weight: normal !important;
+    text-align: right !important;
+    margin-left: auto !important;
+    min-width: 100px !important; /* Ensure minimum width for dates */
+    float: right !important; /* Additional right alignment */
+    position: relative !important; /* Enable positioning */
+    right: 0 !important; /* Align to the right edge */
+  }
+  
+  /* Fix for projects section */
+  .projects .entry-header {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  
+  /* Override any responsive styles that might affect the layout */
+  @media (max-width: 768px) {
+    .entry-header {
+      flex-direction: row !important;
+    }
+  }
 }
 
 .entry-subheader {
@@ -134,6 +182,54 @@ li {
   color: #555;
 }
 
+/* Education section specific styles */
+.entry-details {
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.entry-details div {
+  margin-bottom: 2px;
+}
+
+.entry-details em {
+  font-style: italic;
+}
+
+/* Print-specific styles for education section */
+@media print {
+  h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000;
+    margin-bottom: 8px;
+    padding-bottom: 2px;
+  }
+  
+  .entry-header {
+    margin-bottom: 2px;
+  }
+  
+  .entry-title {
+    font-weight: bold;
+  }
+  
+  .entry-date {
+    font-weight: normal;
+  }
+  
+  .entry-details {
+    margin-left: 0;
+    font-size: 10pt;
+    line-height: 1.2;
+  }
+  
+  .entry-details div {
+    margin-bottom: 1px;
+  }
+}
+
 /* Media queries for responsiveness */
 @media print {
   body {
@@ -167,5 +263,350 @@ li {
   
   .skill-label {
     width: auto;
+  }
+}
+
+/* Add these styles for the header layout and download button */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.download-btn {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #0055aa;
+}
+
+/* Print-specific styles */
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0.5in;
+    box-shadow: none;
+    border: none;
+  }
+  
+  .download-btn {
+    display: none !important;
+  }
+  
+  /* Ensure page breaks don't occur in the middle of sections */
+  section {
+    page-break-inside: avoid;
+  }
+  
+  /* Adjust font sizes for print */
+  h1 {
+    font-size: 18pt;
+  }
+  
+  h2 {
+    font-size: 14pt;
+    margin-top: 12pt;
+  }
+  
+  h3 {
+    font-size: 12pt;
+  }
+  
+  p, li, .entry-date, .entry-location {
+    font-size: 10pt;
+  }
+  
+  /* Ensure links are visible in print */
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+  
+  /* Optimize colors for print */
+  * {
+    color: black !important;
+    background: transparent !important;
+  }
+}
+
+/* Single-page print optimization */
+@media print {
+  /* Base print styles */
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-size: 9pt; /* Slightly reduce base font size */
+  }
+  
+  .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0.3in; /* Reduce padding to fit more content */
+    box-shadow: none;
+    border: none;
+  }
+  
+  /* Hide download button when printing */
+  .download-btn {
+    display: none !important;
+  }
+  
+  /* Compact header */
+  header {
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 16pt;
+    margin-bottom: 5px;
+  }
+  
+  .contact-info {
+    gap: 10px;
+    font-size: 8pt;
+  }
+  
+
+  section {
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+  
+  h2 {
+    font-size: 12pt;
+    margin-top: 8pt;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+  }
+  
+  h3 {
+    font-size: 10pt;
+    margin-bottom: 3px;
+  }
+  
+ 
+  .entry {
+    margin-bottom: 8px;
+  }
+  
+  .entry-subheader {
+    margin-bottom: 2px;
+  }
+ 
+  ul {
+    margin-bottom: 5px;
+    padding-left: 15px;
+  }
+  
+  li {
+    margin-bottom: 2px;
+    font-size: 9pt;
+    line-height: 1.3;
+  }
+  
+  p, .entry-date, .entry-location {
+    font-size: 9pt;
+    line-height: 1.3;
+  }
+  
+
+  .multi-column {
+    gap: 0.3rem 1rem;
+  }
+  
+  .multi-column li {
+    margin-bottom: 0.3rem;
+  }
+  
+
+  .skills {
+    gap: 3px;
+  }
+  
+  .skill-row {
+    line-height: 1.3;
+  }
+  
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+  
+
+  @page {
+    size: letter portrait;
+    margin: 0;
+  }
+}
+
+
+@media print {
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-size: 8pt; 
+  }
+  
+  .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0.25in;
+    box-shadow: none;
+    border: none;
+  }
+  
+
+  header {
+    margin-bottom: 8px;
+  }
+  
+  h1 {
+    font-size: 14pt;
+    margin-bottom: 3px;
+  }
+  
+  .contact-info {
+    gap: 8px;
+    font-size: 7pt;
+    margin-bottom: 8px;
+  }
+  
+  section {
+    margin-bottom: 6px;
+    page-break-inside: avoid;
+  }
+  
+  h2 {
+    font-size: 10pt;
+    margin-top: 6pt;
+    margin-bottom: 3px;
+    padding-bottom: 1px;
+  }
+  
+  h3 {
+    font-size: 9pt;
+    margin-bottom: 2px;
+  }
+  
+
+  .entry {
+    margin-bottom: 5px;
+  }
+  
+  .entry-header {
+    margin-bottom: 1px;
+  }
+  
+  .entry-subheader {
+    margin-bottom: 1px;
+  }
+  
+  .entry-details {
+    margin-top: 1px;
+    line-height: 1.2;
+  }
+  
+  .entry-details div {
+    margin-bottom: 0;
+  }
+  
+
+  ul {
+    margin-top: 1px;
+    margin-bottom: 3px;
+    padding-left: 12px;
+  }
+  
+  li {
+    margin-bottom: 0;
+    font-size: 8pt;
+    line-height: 1.2;
+  }
+  
+ 
+  .multi-column {
+    gap: 0.2rem 0.5rem;
+  }
+  
+  .multi-column li {
+    margin-bottom: 0.2rem;
+  }
+  
+ 
+  .skills {
+    gap: 2px;
+  }
+  
+  .skill-row {
+    line-height: 1.2;
+  }
+  
+
+  @page {
+    size: letter portrait;
+    margin: 0;
+  }
+}
+
+
+p, .entry-details div, li {
+  font-size: 11pt;
+  line-height: 1.4;
+}
+
+@media print {
+  p, .entry-details div, li {
+    font-size: 9pt; 
+    line-height: 1.3;
+  }
+  
+
+  .container {
+    padding: 0.25in;
+  }
+  
+  h2 {
+    font-size: 11pt; 
+    margin-bottom: 4px;
+  }
+  
+  .entry-title {
+    font-size: 10pt;
+  }
+  
+
+  ul {
+    padding-left: 15px;
+  }
+  
+
+  li {
+    margin-bottom: 1px;
   }
 }
